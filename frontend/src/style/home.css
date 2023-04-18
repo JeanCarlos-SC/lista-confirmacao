@@ -1,0 +1,16 @@
+.card-item {
+  display: flex;
+  flex-flow: row-reverse wrap;
+  justify-content: space-around;
+}
+
+main {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  background-color: #CCCCCC;
+}
+
+.div-main {
+  background-color: #CCCCCC;
+}
