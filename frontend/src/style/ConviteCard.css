@@ -1,0 +1,63 @@
+.product-card {
+  align-items: center;
+  background-color: #BF0286;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) , 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  font-size: 1.6rem;
+  height: 320px;
+  justify-content: center;
+  margin: 40px 27.4px;
+  text-align: center;
+  width: 279px;
+  color: rgb(238, 227, 227);
+}
+
+.div-btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 140px;
+}
+
+.btn-addToCart {
+  background-color: #31c28d;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  height: 38px;
+  width: 244px;
+}
+
+.btn-not {
+  background-color: #f31212;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  height: 38px;
+  width: 244px;
+  margin-top: 6%;
+}
+
+.btn-not:hover {
+  background-color: rgb(207, 89, 89);
+  cursor: pointer;
+}
+
+.btn-not:active {
+  background-color: #ff0101;
+}
+
+
+.btn-addToCart:hover {
+  background-color: rgb(49, 194, 180);
+  cursor: pointer;
+}
+
+.btn-addToCart:active {
+  background-color: #6ffac7;
+}
