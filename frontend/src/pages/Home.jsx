@@ -8,15 +8,17 @@ import '../style/home.css';
 class Home extends React.Component {
   state = {
     names: [],
+    firstLoad: true,
   };
 
-  componentDidMount() {
-    getAll().then(({ convidados }) => {
-       const convidadosSorted = convidados
-         .filter((convidado) => convidado.mostrar)
-         .sort((a, b) => a.name.localeCompare(b.name));
-       this.setState({ names: convidadosSorted });
-    });
+  async componentDidMount() {
+    const { convidados } = await getAll();
+
+    const convidadosSorted = convidados
+      .filter((convidado) => convidado.mostrar)
+      .sort((a, b) => a.name.localeCompare(b.name));
+      
+    this.setState({ names: convidadosSorted, firstLoad: false });
   }
 
   handleChange = (value) => {
@@ -24,11 +26,11 @@ class Home extends React.Component {
   };
 
   render() {
-    const { names } = this.state;
+    const { names, firstLoad } = this.state;
     return (
       <div className='div-main'>
         <Header />
-        { names.length > 0 && (
+        { !firstLoad && (
           <SearchInput initalState={names} handleChange={this.handleChange} />
         )}
         <main>

@@ -1,6 +1,6 @@
-const HOST = process.env.REACT_APP_API_HOST || 'localhost:3001';
+const HOST = process.env.REACT_APP_API_HOST || 'localhost:3000';
 const PROTOCOL = process.env.REACT_APP_API_PROTOCOL || 'http';
-const baseUrl = `${PROTOCOL}:${HOST}`
+const baseUrl = `${PROTOCOL}://${HOST}`
 
 export async function getAll() {
   const ENDPOINT = `${baseUrl}/convidados`;
