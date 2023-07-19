@@ -8,7 +8,7 @@ export async function getAll() {
   return data;
 }
 
-export async function confirm(id) {
+export async function confirmar(id, ) {
   if (id) {
     try {
       const url = `${baseUrl}/convidados/confirmar/${id}`;
@@ -20,7 +20,7 @@ export async function confirm(id) {
   }
 }
 
-export async function hide(id) {
+export async function esconder(id) {
   if (id) {
     try {
       const url = `${baseUrl}/convidados/esconder/${id}`;

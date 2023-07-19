@@ -5,12 +5,22 @@
 
 header {
   align-items: center;
-  background-color: #CCCCCC;
+  background-color: #cf7bb6;
   display: flex;
   flex-direction: row;
   height: 148px;
   justify-content: center;
   width: 100%;
+}
+
+.header-nav {
+  margin-top: 90px;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-link {
+  text-decoration: underline !important;
 }
 
 .header-children {
@@ -28,5 +38,8 @@ header {
 }
 
 img {
-  height: 140px;
+  height: 300px;
+  margin-top: 60px;
 }
+
+

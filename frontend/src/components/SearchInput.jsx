@@ -42,9 +42,9 @@ class SearchInput extends React.Component {
   };
 
   render() {
-    const { search } = this.state;
+    const { search, admin } = this.state;
     return (
-      <div className='margin'>
+      <div className={ admin ? 'margin' : 'margin-convidado'}>
         <InputGroup className='mb-3'>
           <Form.Control
             ref='inputSearch'
@@ -54,10 +54,7 @@ class SearchInput extends React.Component {
             value={search}
             onInput={this.handleSearch}
           />
-          <Button
-            variant='secondary'
-            id='button-addon2'
-          >
+          <Button variant='outline-light' id='button-addon2'>
             <FeatherIcon icon='search' />
           </Button>
         </InputGroup>

@@ -1,0 +1,14 @@
+body {
+  background-color: #cf7bb6;
+  font-weight: bold;
+}
+
+.header-grid {
+  background-color: #cf7bb6;
+  display: flex;
+  justify-content: center;
+}
+
+.result-grid {
+  background-color: #cf7bb6;
+}
