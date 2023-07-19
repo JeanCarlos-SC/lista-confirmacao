@@ -1,7 +1,7 @@
 import React from 'react';
 import '../style/ConviteCard.css';
 import { withSwal } from 'react-sweetalert2';
-import { esconder, confirmar } from '../services/api'
+import { hide, confirm } from '../services/api'
 
 class ConviteCard extends React.Component {
   showConfirmAlert = () => {
@@ -16,18 +16,18 @@ class ConviteCard extends React.Component {
         cancelButtonColor: '#ff0000',
         cancelButtonText: 'Cancelar',
       })
-      .then((confirm) => {
-        if (confirm.isConfirmed) {
-
+      .then((confirmed) => {
+        if (confirmed.isConfirmed) {
           this.props.swal.fire({
             title: 'Deus Abençoe!!',
             text: 'Ficamos muito felizes com a sua presença, estaremos aguardando!',
             icon: 'success',
             confirmButtonColor: '#31C28D',
             confirmButtonText: 'Amémm!',
-          }).then(confirm => {
-            if (confirm.isConfirmed) {
-              confirmar(this.props.id).then((payload) => {
+          })
+          .then(confirmed => {
+            if (confirmed.isConfirmed) {
+              confirm(this.props.id).then((payload) => {
                 if (payload) {
                   this.props.swal.fire({
                     title: 'Erro inesperado',
@@ -57,16 +57,17 @@ class ConviteCard extends React.Component {
         cancelButtonColor: '#ff0000',
         cancelButtonText: 'Cancelar',
       })
-      .then((confirm) => {
-        if (confirm.isConfirmed) {
+      .then((confirmed) => {
+        if (confirmed.isConfirmed) {
           this.props.swal.fire({
             title: 'Deus Abençoe!!',
             text: 'Sentimos muito por não poder ir, mas temos certeza que Deus vai preparar outra oportunidade!',
             icon: 'error',
             timer: 3000,
             showConfirmButton: false,
-          }).then(() => {
-                  esconder(this.props.id).then((payload) => {
+          })
+          .then(() => {
+                  hide(this.props.id).then((payload) => {
                     if (payload) {
                       this.props.swal.fire({
                         title: 'Erro inesperado',
