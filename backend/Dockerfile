@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Exponha a porta que a aplicação Express.js está ouvindo
-EXPOSE ${PORT}
+EXPOSE 3000
 
 # Inicie a aplicação Express.js
 CMD ["npm", "start"]
