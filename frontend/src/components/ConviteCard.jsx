@@ -1,7 +1,7 @@
 import React from 'react';
 import '../style/ConviteCard.css';
 import { withSwal } from 'react-sweetalert2';
-import { hide, confirm } from '../services/api'
+import { esconder, confirmar } from '../services/api';
 
 class ConviteCard extends React.Component {
   showConfirmAlert = () => {
@@ -27,7 +27,7 @@ class ConviteCard extends React.Component {
           })
           .then(confirmed => {
             if (confirmed.isConfirmed) {
-              confirm(this.props.id).then((payload) => {
+              confirmar(this.props.id).then((payload) => {
                 if (payload) {
                   this.props.swal.fire({
                     title: 'Erro inesperado',
@@ -67,18 +67,18 @@ class ConviteCard extends React.Component {
             showConfirmButton: false,
           })
           .then(() => {
-                  hide(this.props.id).then((payload) => {
-                    if (payload) {
-                      this.props.swal.fire({
-                        title: 'Erro inesperado',
-                        text: payload,
-                        icon: 'error',
-                        timer: 3000,
-                        showConfirmButton: false,
-                      });
-                    }
-                    window.location.reload(true);
+              esconder(this.props.id).then((payload) => {
+                if (payload) {
+                  this.props.swal.fire({
+                    title: 'Erro inesperado',
+                    text: payload,
+                    icon: 'error',
+                    timer: 3000,
+                    showConfirmButton: false,
                   });
+                }
+                window.location.reload(true);
+              });
           });
         }
       });
