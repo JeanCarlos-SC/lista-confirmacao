@@ -8,9 +8,9 @@ main {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  background-color: #CCCCCC;
+  background-color: #cf7bb6;
 }
 
 .div-main {
-  background-color: #CCCCCC;
+  background-color: #cf7bb6;
 }

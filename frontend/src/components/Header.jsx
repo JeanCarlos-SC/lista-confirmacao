@@ -1,31 +1,27 @@
 import React from 'react';
 import '../style/Header.css';
-import capa from '../img/convite-header-sem.png';
+import capa from '../img/convite-header-sem(2).png';
+import Nav from 'react-bootstrap/Nav';
 
 class Header extends React.Component {
-  state = {
-    products: [],
-  };
-
-  componentDidMount() {
-    const GET_PRODUCTS = localStorage.getItem('productsOnCart');
-    if (GET_PRODUCTS) {
-      this.setState({ products: JSON.parse(GET_PRODUCTS) });
-    }
-  }
-
-  componentDidUpdate(_, prevState) {
-    const GET_PRODUCTS = JSON.parse(localStorage.getItem('productsOnCart'));
-    if (GET_PRODUCTS && GET_PRODUCTS.length !== prevState.products.length) {
-      this.setState({ products: GET_PRODUCTS });
-    }
-  }
-
-  render() {
+render() {
+    const { admin } = this.props;
     return (
-      <header>
-        <img src={ capa } />
-      </header>
+      <>
+        <header>
+          <img src={capa} />
+        </header>
+        {admin && (
+          <Nav
+            expand='lg'
+            className='header-nav'
+            variant='underline'
+            defaultActiveKey='/results'
+          >
+            <Nav.Link href='/results' className='nav-link'>Visualizar Confirmações</Nav.Link>
+          </Nav>
+        )}
+      </>
     );
   }
 }
